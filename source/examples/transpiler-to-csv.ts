@@ -1,4 +1,4 @@
-import Transpiler from "../lib";
+import Transpiler from "@lib/.";
 
 const transpiler = new Transpiler();
 

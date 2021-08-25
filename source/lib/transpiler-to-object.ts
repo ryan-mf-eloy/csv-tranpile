@@ -1,8 +1,12 @@
 import fs from "fs";
 
-import { acceptedSeparators } from ".";
+import { acceptedSeparators } from "@lib/.";
 
-import { ITranspilerToObject, ObjectToCSV, Separators } from "./@types/index.d";
+import {
+  ITranspilerToObject,
+  ObjectToCSV,
+  Separators,
+} from "@lib/@types/index.d";
 
 class TranspilerToObject implements ITranspilerToObject {
   private CSVString!: string;

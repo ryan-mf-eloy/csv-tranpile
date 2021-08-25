@@ -30,10 +30,11 @@
   },
   "scripts": {
     "build": "tsc",
-    "test:toCSV": "ts-node-dev --transpile-only --ignore-watch node_modules source/examples/transpiler-to-csv.ts",
-    "test:toObject": "ts-node-dev --transpile-only --ignore-watch node_modules source/examples/transpiler-to-object.ts"
+    "test:toCSV": "ts-node-dev -r tsconfig-paths/register --transpile-only --ignore-watch node_modules source/examples/transpiler-to-csv.ts",
+    "test:toObject": "ts-node-dev -r tsconfig-paths/register --transpile-only --ignore-watch node_modules source/examples/transpiler-to-object.ts"
   },
   "devDependencies": {
+    "@types/node": "^16.7.1",
     "@typescript-eslint/eslint-plugin": "^4.29.2",
     "@typescript-eslint/parser": "^4.29.2",
     "eslint": "^7.32.0",
@@ -43,8 +44,8 @@
     "eslint-plugin-prettier": "^3.4.1",
     "prettier": "^2.3.2",
     "ts-node-dev": "^1.1.8",
-    "typescript": "^4.3.5",
-    "@types/node": "^16.7.1"
+    "tsconfig-paths": "^3.11.0",
+    "typescript": "^4.3.5"
   },
   "prettier": {
     "name": "csv-transpile",

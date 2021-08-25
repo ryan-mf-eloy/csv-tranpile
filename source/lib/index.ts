@@ -1,12 +1,12 @@
-import TranspilerToCSV from "./transpiler-to-csv";
-import TranspilerToObject from "./transpiler-to-object";
+import TranspilerToCSV from "@lib/transpiler-to-csv";
+import TranspilerToObject from "@lib/transpiler-to-object";
 
 import {
   ITranspiler,
   ObjectToCSV,
   Separators,
   ToCSVParameters,
-} from "./@types/index.d";
+} from "@lib/@types/index.d";
 
 export const acceptedSeparators: Separators[] = ["=", ",", ";", ":", " ", "\t"];
 
