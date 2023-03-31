@@ -1,0 +1,55 @@
+{
+  "name": "csv-transpile",
+  "version": "0.0.1",
+  "main": "./build/source/index.ts",
+  "types": "./source/lib/typescript/@types/.index.d.ts",
+  "files": [
+    "./build"
+  ],
+  "description": "An object converter(key value) for .csv and .csv files for objects.",
+  "license": "MIT",
+  "displayName": "CSV Transpile",
+  "repository": {
+    "url": "https://github.com/ryan-mf-eloy/csv-transpile",
+    "type": "Lib"
+  },
+  "keywords": [
+    "CSV",
+    ".CSV",
+    "CSV Files",
+    "Transpile",
+    "CSV Transpile",
+    "CSV Converter",
+    "Convert CSV to object",
+    "Convert object in CSV"
+  ],
+  "author": {
+    "email": "math.eloy@hotmail.com",
+    "name": "Ryan M. F. Eloy",
+    "url": "https://github.com/ryan-mf-eloy"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test:toCSV": "ts-node-dev -r tsconfig-paths/register --transpile-only --ignore-watch node_modules source/examples/transpiler-to-csv.ts",
+    "test:toObject": "ts-node-dev -r tsconfig-paths/register --transpile-only --ignore-watch node_modules source/examples/transpiler-to-object.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^16.7.1",
+    "@typescript-eslint/eslint-plugin": "^4.29.2",
+    "@typescript-eslint/parser": "^4.29.2",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-xo": "^0.38.0",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-plugin-prettier": "^3.4.1",
+    "prettier": "^2.3.2",
+    "ts-node-dev": "^1.1.8",
+    "tsconfig-paths": "^3.11.0",
+    "typescript": "^4.3.5"
+  },
+  "prettier": {
+    "name": "csv-transpile",
+    "version": "0.0.1",
+    "prettier": "prettier-config-xo"
+  }
+}
