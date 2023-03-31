@@ -3,12 +3,12 @@ import TranspilerToObject from "@lib/transpiler-to-object";
 
 import {
   ITranspiler,
-  ObjectToCSV,
-  Separators,
+  TObjectToCSV,
+  TSeparators,
   ToCSVParameters,
 } from "@lib/@types/index.d";
 
-export const acceptedSeparators: Separators[] = ["=", ",", ";", ":", " ", "\t"];
+export const acceptedSeparators: TSeparators[] = ["=", ",", ";", ":", " ", "\t"];
 
 class Transpiler implements ITranspiler {
   private readonly toCSVTranspiler = new TranspilerToCSV();
@@ -24,7 +24,7 @@ class Transpiler implements ITranspiler {
   toObject(
     CSVToObject: string,
     isArray?: string[]
-  ): ObjectToCSV | ObjectToCSV[] {
+  ): TObjectToCSV | TObjectToCSV[] {
     const CSVObject = this.toObjectTranspiler.handle(CSVToObject, isArray);
 
     return CSVObject;

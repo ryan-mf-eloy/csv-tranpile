@@ -4,18 +4,18 @@ import path from "path";
 import { acceptedSeparators } from "@lib/.";
 
 import {
-  ObjectToCSV,
+  TObjectToCSV,
   ToCSVParameters,
-  TranspilerToCSVConfigs,
+  ITranspilerToCSVConfigs,
   ITranspilerToCSV,
 } from "./@types/index.d";
 
 class TranspilerToCSV implements ITranspilerToCSV {
   private CSVString: string = ``;
 
-  private objectToCSV!: ObjectToCSV[];
+  private objectToCSV!: TObjectToCSV[];
 
-  private configs: TranspilerToCSVConfigs = {
+  private configs: ITranspilerToCSVConfigs = {
     separator: ",",
     save: {
       path: __dirname,
@@ -197,7 +197,7 @@ class TranspilerToCSV implements ITranspilerToCSV {
    * @CSV
    */
 
-  private setTableHeaders(data: ObjectToCSV): void {
+  private setTableHeaders(data: TObjectToCSV): void {
     Object.keys(data).forEach(
       (header, index, tableHeadersArray) =>
         (this.CSVString += `${header}${this.configs.separator}${
@@ -206,7 +206,7 @@ class TranspilerToCSV implements ITranspilerToCSV {
     );
   }
 
-  private setTableValues(data: ObjectToCSV): void {
+  private setTableValues(data: TObjectToCSV): void {
     Object.values(data).forEach((value, index, tableValuesArray) => {
       const stringfiedValue = Array.isArray(value)
         ? value.join(",")

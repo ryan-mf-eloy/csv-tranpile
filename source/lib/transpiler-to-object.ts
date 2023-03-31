@@ -4,20 +4,20 @@ import { acceptedSeparators } from "@lib/.";
 
 import {
   ITranspilerToObject,
-  ObjectToCSV,
-  Separators,
+  TObjectToCSV,
+  TSeparators,
 } from "@lib/@types/index.d";
 
 class TranspilerToObject implements ITranspilerToObject {
   private CSVString!: string;
 
-  private CSVObject: ObjectToCSV[] = [];
+  private CSVObject: TObjectToCSV[] = [];
 
   private CSVStringRows!: string[];
 
-  private separator!: Separators;
+  private separator!: TSeparators;
 
-  handle(CSVToObject: string, isArray?: string[]): ObjectToCSV | ObjectToCSV[] {
+  handle(CSVToObject: string, isArray?: string[]): TObjectToCSV | TObjectToCSV[] {
     this.validateCSVToObjectType(CSVToObject);
 
     this.setCSVStringRows();
@@ -124,7 +124,7 @@ class TranspilerToObject implements ITranspilerToObject {
     this.CSVStringRows = this.CSVString.split("\n");
   }
 
-  private setSeparator(separator: Separators): void {
+  private setSeparator(separator: TSeparators): void {
     this.separator = separator;
   }
 

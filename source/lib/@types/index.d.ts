@@ -1,12 +1,12 @@
 declare module "csv-transpile";
 
-export type ObjectToCSV = {
+export type TObjectToCSV = {
   [TableHeader in string | number]: number | number[] | string | string[];
 };
 
-export type Separators = "=" | "," | ";" | ":" | " " | "\t";
+export type TSeparators = "=" | "," | ";" | ":" | " " | "\t";
 
-export interface SaveConfigs {
+export interface ISaveConfigs {
   readonly path?: string;
   readonly filename?: string;
   readonly dirName?: string;
@@ -14,20 +14,20 @@ export interface SaveConfigs {
   readonly replace?: boolean;
 }
 
-export interface TranspilerToCSVConfigs {
-  readonly separator?: Separators;
-  readonly save?: SaveConfigs;
+export interface ITranspilerToCSVConfigs {
+  readonly separator?: TSeparators;
+  readonly save?: ISaveConfigs;
 }
 
 export interface ToCSVParameters {
-  readonly objectToCSV: ObjectToCSV | ObjectToCSV[];
-  readonly configs?: TranspilerToCSVConfigs;
+  readonly objectToCSV: TObjectToCSV | TObjectToCSV[];
+  readonly configs?: ITranspilerToCSVConfigs;
 }
 
 export interface ITranspiler {
   toCSV(data: ToCSVParameters): string;
 
-  toObject(CSVToObject: string): ObjectToCSV | ObjectToCSV[];
+  toObject(CSVToObject: string): TObjectToCSV | TObjectToCSV[];
 }
 
 export interface ITranspilerToCSV {
@@ -35,5 +35,5 @@ export interface ITranspilerToCSV {
 }
 
 export interface ITranspilerToObject {
-  handle(CSVToObject: string, isArray?: string[]): ObjectToCSV | ObjectToCSV[];
+  handle(CSVToObject: string, isArray?: string[]): TObjectToCSV | TObjectToCSV[];
 }
